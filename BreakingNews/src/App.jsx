@@ -1,4 +1,3 @@
-import './App.css'
 import { GlobalStyled } from './GlobalStyled'
 import Home from './Pages/Home/Home'
 
