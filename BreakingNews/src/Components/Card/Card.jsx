@@ -1,24 +1,26 @@
 import { CardBody, CardContainer, CardFooter } from "./CardStyled";
+import { TextLimit } from "../TextLimit/TextLimit.jsx";
 
-export function Card({ news }) {
+export function Card(props) {
     return (
         <CardContainer>
             <CardBody>
                 <div>
-                    <h2>{news.title}</h2>
-                    <p>{news.content}</p>
+                    <h2>{props.title}</h2>
+                    <img src={props.bannerImage} alt='Imagem' />
+
                 </div>
-                <img src={news.image} alt='Imagem' />
+                <TextLimit content={props.content} limit={150}/>
             </CardBody>
 
             <CardFooter>
                 <div>
                     <i className="bi bi-hand-thumbs-up"></i>
-                    <span>{news.likes}</span>
+                    <span>{props.likes}</span>
                 </div>
                 <div>
                     <i className="bi bi-chat-text"></i>
-                    <span>{news.comments}</span>
+                    <span>{props.comments}</span>
                 </div>
             </CardFooter>
         </CardContainer>
